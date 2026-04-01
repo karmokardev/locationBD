@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@import "tailwindcss";
+@config "../../tailwind.config.js";
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-brand-25:  #fff0f5;
+  --color-brand-50:  #ffe4ed;
+  --color-brand-100: #ffc8da;
+  --color-brand-200: #ff9fbd;
+  --color-brand-300: #ff74a0;
+  --color-brand-400: #f94a82;
+  --color-brand-500: #E92063; /* Base */
+  --color-brand-600: #c81a55;
+  --color-brand-700: #a81547;
+  --color-brand-800: #87103a;
+  --color-brand-900: #690c2e;
+  --color-brand-950: #3f061a;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 228 60% 26%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 228 60% 26%;
+
+    --radius: 0.5rem;
+
+    /* Custom tokens */
+    --hero-overlay: 228 70% 18%;
+    --navy: 228 60% 26%;
+    --navy-dark: 228 70% 18%;
+    --navy-light: 228 50% 35%;
+    --pink: 340 82% 52%;
+    --pink-hover: 340 82% 45%;
+    --section-bg: 220 20% 97%;
+    --card-shadow: 0 8px 30px -6px hsl(228 60% 26% / 0.08);
+    --card-shadow-hover: 0 12px 40px -6px hsl(228 60% 26% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+    --secondary: 217 33% 18%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 33% 18%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 340 82% 52%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 213 27% 84%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@utility hero-overlay {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--hero-overlay) / 0.92) 0%,
+    hsl(var(--navy) / 0.75) 100%
+  );
+}
+
+@utility text-gradient {
+  background: linear-gradient(135deg, hsl(var(--pink)), hsl(var(--navy-light)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}

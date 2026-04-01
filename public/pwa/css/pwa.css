@@ -1,0 +1,169 @@
+.pwa-popup-box {
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    max-width: 320px;
+    width: 95%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 10px 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999999;
+    animation: slideUp 0.4s ease;
+    overflow: hidden;
+}
+
+.pwa-popup-box::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 100%;
+    background: linear-gradient(90deg, #4f46e5, #06b6d4, #4f46e5);
+    background-size: 200% 100%;
+    animation: moveLine 2s linear infinite;
+}
+
+@keyframes moveLine {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(40px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.pwa-popup-box .pwa-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pwa-popup-box .pwa-left img {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+}
+
+.pwa-popup-box .pwa-left .pwa-app-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pwa-popup-box .pwa-left .pwa-app-info h4 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #000;
+}
+
+.pwa-popup-box .pwa-left .pwa-app-info span {
+    font-size: 10px;
+    color: #666;
+}
+
+.pwa-popup-box .pwa-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pwa-popup-box .pwa-right .pwa-install-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #0d6efd, #2563eb);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.pwa-popup-box .pwa-right .pwa-install-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+.pwa-popup-box .pwa-right .pwa-close-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #888;
+}
+
+.pwa-popup-box .pwa-right .pwa-close-btn:hover {
+    color: #000;
+}
+
+.pwa-footer {
+    margin-top: 8px;
+    background: #2563eb;
+    max-width: 250px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    padding: 12px 14px;
+    border-radius: 16px;
+    color: white;
+    font-family: sans-serif;
+}
+
+.pwa-footer .pwa-footer-dl {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.pwa-download-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.pwa-download-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: #fff;
+}
+
+.pwa-footer .pwa-footer-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pwa-footer .pwa-footer-info h4 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.pwa-footer .pwa-footer-info span {
+    font-size: 10px;
+    color: #ffc;
+}
