@@ -9,7 +9,7 @@
 
     <title>@yield('title') | {{ config('app.name') }}</title>
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/bd.png') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @include('pwa::header')
@@ -18,9 +18,9 @@
 <body class="min-h-screen bg-background">
 
     <!-- Navbar -->
-    @include('components.navbar')
+    <!-- @include('components.navbar') -->
 
-    <main class="pt-16">
+    <main class="">
         @hasSection('breadcrumb')
             @include('components.common.breadcrumb')
         @endif
@@ -28,7 +28,7 @@
     </main>
 
     <!-- Footer -->
-    @include('components.footer')
+    <!-- @include('components.footer') -->
 </body>
 
 </html>
